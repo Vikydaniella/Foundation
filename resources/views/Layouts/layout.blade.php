@@ -37,11 +37,9 @@
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                 <img src="/img/Sh.png"width="200px"alt="SeamlessHR logo">
-                <img src="/img/So.png"width="200px"alt="Special Olympics logo">
-</n>
-                <p>SeamlessHR in collaboration with Special Olympics.</p>
                 </div>
         @yield('content')
         <footer>Copyright 2023 @Codeable</footer>
     </body>
+    @include('sweetalert::alert')
 </html>

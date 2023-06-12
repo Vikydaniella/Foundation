@@ -4,49 +4,33 @@
 
 <div class='ref-center position-ref full-height'>
 
-    <div class='content'>
-    <div class='title m-b-md'>
-    Seamless4Good
-    </div>
-    </div>
-</div>
-
-<p>{{$tab1}} - {{$tab2}}- {{$tab3}}- {{$tab4}}- {{$tab5}}- {{$tab6}}- {{$tab7}}- {{$tab8}}</p>
-@if($tab3 ='Join us')
-<p>Join us</p>
-@elseif($tab3 = 'Nothing')
-<p>Be a Partner</p>
-@else($tab3 = 'Someday')
-<p>Sponsor</p>
-@endif
-
-@unless($tab2 == 'Something')
-<p>What we do </p>
-@endunless
-
-@for ($i =0; $i < 5; $i++)
-<p>The value of $i is {{$i}}</p>
-@endfor
-
-@for ($i =0; $i < count($numbers); $i++)
-<p>{{$numbers [$i]['type']}} - {{$numbers [$i]['number']}}</p>
-@endfor
-
-@php
-$csr='Community Social Responsibility';
-echo ($csr);
-@endphp
-
-@foreach($numbers as $number)
-<div>{{$loop-> index}} {{$number['type']}} - {{$number['number']}}</div>
-@if($loop-> first)
-<span>Cohorts</span>
-@endif
-@if($loop-> last)
-<span>Interns</span>
-@endif
-@endforeach
-
-<p>{{$name}}</p>
-<p>{{$age}}</p>
+<div class='wrapper create-foundation'>
+<h1>Join us</h1>
+<form action='/foundation' method='POST'>
+@csrf
+<br>
+<div class='examplediv'>
+  <form action='tables.html'>
+    <label for='name of company/organisation'> Name of Organisation:</label>
+    <input type="Text" value='' Placeholder='Name of Company/Organisation'>
+   <br> <br>
+  
+   <label for='name of company representative'> Name of Company Representative:</label>
+   <input type='Text' value='' placeholder='Name of Company Representative'>
+    <br><br>
+   
+    <label for='email'> Email:</label>
+    <input type='email' value='' Placeholder='Email'>
+    <br><br>
+    <label for='Choose Area of Interest'>Choose Area of Interest</label>
+    <select name='type'> id='type'
+    <option value='athlete'>Become a Partner</option>
+    <option value='athlete'>Sponsor a Programme</option>
+    <option value='unified partner'>Volunteer as Facilitator</option>
+    </select>
+    <br>
+    <input type='submit' value='Register'>
+    </form>
+  </div>
+  
 @endsection           

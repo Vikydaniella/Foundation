@@ -3,11 +3,16 @@
 @section('content')
 
 <div class='wrapper foundation-show'>
-<h1>Order for {{$pizza->name}}</h1>
-<p class='type'>Type - {{$pizza->type}}</p>
-<p class='base'>Base - {{$pizza->base}}</p>
+<h1>Codeable Gallery</h1>
 </div>
-<a href='/pizza' class= 'back'>< - Back to all pizzas</a>
 
+<img src="/img/Codeable1.jpeg"width="200px"alt="Codeable Picture">
+<br>
+<img src="/img/Codeable2.jpeg"width="200px"alt="Codeable Picture">
+<br>
+<img src="/img/Codeable3.jpeg"width="200px"alt="Codeable Picture">
+<br>
+<img src="/img/Codeable4.jpeg"width="200px"alt="Codeable Picture">
+<br>
 
 @endsection

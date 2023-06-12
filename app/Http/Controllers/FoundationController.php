@@ -3,19 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Foundation; 
+use App\Models\Foundation; 
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FoundationController extends Controller
 {
     public function index(){
         
-        $numbers = foundation::all();
+        //$registrations = Foundation::all();
 
-        return view('Codeable.index',[
-        'numbers'=> $numbers,
-        'name'=> request('name'),//query parameters
-        'age'=> request('age')
-        ]);
+        return view('Codeable.index');
     }
     
     public function show($id){
@@ -27,15 +24,17 @@ class FoundationController extends Controller
         return view('Codeable.create');
     }
    
-    public function store(){
+    public function store(Request $request){
         $foundation = new Foundation();
 
-        $foundation -> name = request ('name');
-        $foundation -> type = request ('type');
-        $foundation -> age = request ('age');
+        $foundation->first_name =request('first_name');
+        $foundation->last_name =request('last_name');
+        $foundation->email =request('email');
+        $foundation->type =request('type');
+        $foundation->gender =request('gender');
 
         $foundation->save();
-    
+        Alert::success('Success', 'Application successful');
         return redirect('/')->with('mssg', 'Thanks for registering');
     }
 }

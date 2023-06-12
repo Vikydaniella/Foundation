@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FoundationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/foundation','FoundationController@index');
-Route::get('/foundation/create', 'FoundationController@create');
-Route::post('/foundation','FoundationController@store');
-Route::get('/foundation/{id}','FoundationController@show');
+Route::get('/foundation', [FoundationController::class, 'index']);
+Route::get('/foundation/create', [FoundationController::class, 'create']);
+Route::post('/foundation',[FoundationController::class, 'store']);
+Route::get('/foundation/{id}',[FoundationController::class, 'show']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
