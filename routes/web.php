@@ -23,6 +23,5 @@ Route::get('/foundation/create', [FoundationController::class, 'create']);
 Route::post('/foundation',[FoundationController::class, 'store']);
 Route::get('/foundation/{id}',[FoundationController::class, 'show']);
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes();
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

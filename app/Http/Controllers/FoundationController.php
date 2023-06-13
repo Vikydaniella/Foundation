@@ -8,14 +8,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class FoundationController extends Controller
 {
-    public function index(){
+    public function index(){ 
+       return view('Codeable.index');
+        }
         
-        //$registrations = Foundation::all();
-
-        return view('Codeable.index');
-    }
-    
-    public function show($id){
+        public function show($id){
         $Codeable = Foundation::findOrFail($id);
 
         return view('Codeable.show', ['foundation' => $Codeable]);
@@ -35,6 +32,6 @@ class FoundationController extends Controller
 
         $foundation->save();
         Alert::success('Success', 'Application successful');
-        return redirect('/')->with('mssg', 'Thanks for registering');
+        return redirect('/');
     }
 }
