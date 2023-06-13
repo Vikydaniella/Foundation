@@ -9,16 +9,15 @@ use RealRashid\SweetAlert\Facades\Alert;
 class FoundationController extends Controller
 {
     public function index(){ 
-       return view('Codeable.index');
+       return view('codeable.index');
         }
         
         public function show($id){
-        $Codeable = Foundation::findOrFail($id);
 
-        return view('Codeable.show', ['foundation' => $Codeable]);
+        return view('codeable.show');
     } 
     public function create(){
-        return view('Codeable.create');
+        return view('codeable.create');
     }
    
     public function store(Request $request){
