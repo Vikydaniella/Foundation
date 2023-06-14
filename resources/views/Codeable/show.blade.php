@@ -1,6 +1,14 @@
 @extends('layouts.layout')
 
 @section('content')
+<!--<div class='wrapper foundation-show'>
+<h2>Codeable Registered Candidates</h2>
+<p class='first_name'>first_name - {{$codeable->first_name}}</p>
+<p class='last_name'>last_name - {{$codeable->last_name}}</p>
+<p class='email'>email - {{$codeable->email}}</p>
+<p class='type'>type - {{$codeable->type}}</p>
+<p class='gender'>gender - {{$codeable->gender}}</p>
+</div>-->
 
 <div class='wrapper foundation-show'>
 <h1>Codeable Gallery</h1>

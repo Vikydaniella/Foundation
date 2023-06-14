@@ -13,8 +13,9 @@ class FoundationController extends Controller
         }
         
         public function show($id){
+        $codeable = Foundation::find($id);
 
-        return view('codeable.show');
+        return view('codeable.show',['codeable'=>$codeable]);
     } 
     public function create(){
         return view('codeable.create');
