@@ -26,7 +26,8 @@ class FoundationController extends Controller
         return view('codeable.create');
     }
    
-    public function store(Request $request){
+    public function store(Request $request, Foundation $registration){
+        
         $registration = $request -> validate([
         'first_name'=>'required',
         'last_name'=>'required',

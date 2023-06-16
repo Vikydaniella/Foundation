@@ -27,7 +27,6 @@ Route::get('/foundation/create', [FoundationController::class, 'create']);
 Route::post('/foundation',[FoundationController::class, 'store']);
 Route::get('/foundation/{id}',[FoundationController::class, 'show'])->middleware('auth');
 Route::get('/foundation/gallery',[FoundationController::class, 'gallery']);
-Route::get('/register',[UserController::class, 'create']);
 
 Auth::routes();
 
