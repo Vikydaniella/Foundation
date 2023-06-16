@@ -7,31 +7,41 @@ use App\Models\Foundation;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class FoundationController extends Controller
-{
-    public function index(){ 
-       return view('codeable.index');
+{ 
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+    public function index(){
+        
+       return view('codeable.index', ['registrations' => Foundation::all()]);
         }
         
         public function show($id){
-        $codeable = Foundation::find($id);
+        $registration = Foundation::find($id);
 
-        return view('codeable.show',['codeable'=>$codeable]);
+        return view('codeable.show',['registration'=>$registration]);
     } 
     public function create(){
         return view('codeable.create');
     }
    
     public function store(Request $request){
-        $foundation = new Foundation();
+        $registration = $request -> validate([
+        'first_name'=>'required',
+        'last_name'=>'required',
+        'email'=>['required','email'],
+        'type'=>'required',
+        'gender'=>'required',
+        ]);
 
-        $foundation->first_name =request('first_name');
-        $foundation->last_name =request('last_name');
-        $foundation->email =request('email');
-        $foundation->type =request('type');
-        $foundation->gender =request('gender');
-
-        $foundation->save();
+        $registration['user_id']= auth()->id();
+        
+        Foundation::create($registration);
         Alert::success('Success', 'Application successful');
         return redirect('/');
+    }
+    public function gallery(){
+        return view('codeable.gallery');
     }
 }

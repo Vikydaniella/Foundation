@@ -2,10 +2,11 @@
 
 @section('content')
                 <div>
-                <div class="text-center text-sm text-gray-500 sm: text-right line-height:1.6">
+                <div class="text-center text-sm text-gray-500 sm: text-right line-height:0.4">
                             <a href='/foundation/create' class="ml-5 underline"><h3> Register for the next cohort</h3></a>
-                            <a href='/foundation' class="ml-1 underline"><h3> About Codeable</h3></a>
-                            <a href='/foundation/1' class="ml-1 underline"><h3> Gallery</h3></a>
+                            <a href='/foundation/gallery' class="ml-1 underline"><h3> Gallery</h3></a>
+                            
+                           <!-- <a href='/foundation' class="ml-1 underline"><h3>About Codeable</h3></a>-->
                         </div>
                     </div>
 

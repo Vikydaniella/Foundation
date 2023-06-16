@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FoundationController;
+use App\Http\Controllers\UserController;
+use App\Models\Foundation;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/foundation', [FoundationController::class, 'index']);
+Route::get('/foundation', [FoundationController::class, 'index'])->middleware('auth');
 Route::get('/foundation/create', [FoundationController::class, 'create']);
 Route::post('/foundation',[FoundationController::class, 'store']);
-Route::get('/foundation/{id}',[FoundationController::class, 'show']);
+Route::get('/foundation/{id}',[FoundationController::class, 'show'])->middleware('auth');
+Route::get('/foundation/gallery',[FoundationController::class, 'gallery']);
+Route::get('/register',[UserController::class, 'create']);
 
-//Auth::routes();
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

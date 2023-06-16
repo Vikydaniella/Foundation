@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p><a href='/foundation'> View All registered Candidates</a></p>
                 </div>
             </div>
         </div>

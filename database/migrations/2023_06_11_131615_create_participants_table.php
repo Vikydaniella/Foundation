@@ -15,6 +15,7 @@ class CreatefoundationsTable extends Migration
     {
         Schema::create('foundations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelte('cascade');
             $table->timestamps();
             $table->string('first_name');
             $table->string('last_name');
